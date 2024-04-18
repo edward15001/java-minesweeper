@@ -9,8 +9,8 @@ import buscaminasjunio.Clase_Entre_Ventanas;
 public class FMenuInicial extends javax.swing.JFrame {
     
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
-    private FAdmin admin = new FAdmin();
-    private FUser login = new FUser();
+    private static FAdmin admin = new FAdmin();
+    private static FUser login = new FUser();
     
 
     public FMenuInicial() {
@@ -90,12 +90,15 @@ public class FMenuInicial extends javax.swing.JFrame {
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         login.setVisible(true);
         login.setLocationRelativeTo(null);
+        login.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
         login.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_userActionPerformed
 
     private void bossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bossActionPerformed
         admin.setVisible(true);
         admin.setLocationRelativeTo(null);
         admin.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        dispose();
     }//GEN-LAST:event_bossActionPerformed
 
     public static void main(String args[]) {

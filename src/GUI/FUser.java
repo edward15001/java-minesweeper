@@ -11,6 +11,7 @@ import buscaminasjunio.Usuario;
 public class FUser extends javax.swing.JFrame {
 
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FMenuInicial menu = new FMenuInicial();
 
     public FUser() {
         initComponents();
@@ -31,6 +32,7 @@ public class FUser extends javax.swing.JFrame {
         titulo3 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         mensaje = new javax.swing.JTextArea();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -89,6 +91,15 @@ public class FUser extends javax.swing.JFrame {
 
         panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
 
@@ -127,6 +138,13 @@ public class FUser extends javax.swing.JFrame {
         } else {
             mensaje.setText("Datos erroneos");
         }    }//GEN-LAST:event_loginActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     private void nombreUsuarioActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
@@ -189,5 +207,6 @@ public class FUser extends javax.swing.JFrame {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JLabel titulo3;
     private javax.swing.JLabel user;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

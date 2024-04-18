@@ -12,14 +12,16 @@ public class FAdmin extends javax.swing.JFrame {
     String user = new String();
     String passw = new String();
     Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FFuncAdmin ventanaAvanzada = new FFuncAdmin();
+    private static FMenuInicial menu = new FMenuInicial();
+
 
     private void comprobar() {  //Comprueba que los datos introducidos corresponden con los del administrador.
         if (user.equals(data.getAdmin().getNombre()) && passw.equals(data.getAdmin().getContrasenia())) {
             //Si las credenciales introducidas son correctas.
-            FFuncAdmin ventanaAvanzada = new FFuncAdmin();
             ventanaAvanzada.setVisible(true);
             ventanaAvanzada.setLocationRelativeTo(null);
-            ventanaAvanzada.setDefaultCloseOperation(HIDE_ON_CLOSE);
+            ventanaAvanzada.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
             this.dispose();
         } else {
             mensaje.setText("Datos erroneos");
@@ -43,6 +45,7 @@ public class FAdmin extends javax.swing.JFrame {
         titulo2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         mensaje = new javax.swing.JTextArea();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,6 +103,15 @@ public class FAdmin extends javax.swing.JFrame {
 
         panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -112,6 +124,13 @@ public class FAdmin extends javax.swing.JFrame {
         user = nombreAdmin.getText();
         passw = claveAdmin.getText();
         comprobar();    }//GEN-LAST:event_loginActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,5 +179,6 @@ public class FAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel panelPrincipal;
     private javax.swing.JLabel password;
     private javax.swing.JLabel titulo2;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
