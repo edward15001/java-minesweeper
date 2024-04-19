@@ -40,7 +40,7 @@ public class FStats extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulo8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ESTADISTICAS.png"))); // NOI18N
-        jPanel1.add(titulo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel1.add(titulo8, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 0, 590, 130));
 
         select.setBackground(new java.awt.Color(23, 90, 41));
         select.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -51,13 +51,13 @@ public class FStats extends javax.swing.JFrame {
         select.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         select.setIconTextGap(5);
         select.setOpaque(true);
-        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 250, 30));
+        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 250, 30));
 
         desplegable.setBackground(new java.awt.Color(111, 204, 102));
         desplegable.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         desplegable.setForeground(new java.awt.Color(0, 0, 0));
         desplegable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 320, 120, 30));
+        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 210, 120, 30));
 
         jugadores.setBackground(new java.awt.Color(111, 204, 102));
         jugadores.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -70,7 +70,7 @@ public class FStats extends javax.swing.JFrame {
                 jugadoresActionPerformed(evt);
             }
         });
-        jPanel1.add(jugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 390, 180, 40));
+        jPanel1.add(jugadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 180, 40));
 
         marcador.setBackground(new java.awt.Color(111, 204, 102));
         marcador.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -83,7 +83,7 @@ public class FStats extends javax.swing.JFrame {
                 marcadorActionPerformed(evt);
             }
         });
-        jPanel1.add(marcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 450, 180, 40));
+        jPanel1.add(marcador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 40));
 
         tabMov.setBackground(new java.awt.Color(111, 204, 102));
         tabMov.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -96,7 +96,7 @@ public class FStats extends javax.swing.JFrame {
                 tabMovActionPerformed(evt);
             }
         });
-        jPanel1.add(tabMov, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 510, 250, 40));
+        jPanel1.add(tabMov, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 360, 250, 40));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -106,10 +106,10 @@ public class FStats extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 590, -1, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 410, 250, 110));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

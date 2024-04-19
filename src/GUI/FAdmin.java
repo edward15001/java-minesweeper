@@ -58,23 +58,23 @@ public class FAdmin extends javax.swing.JFrame {
         claveAdmin.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         claveAdmin.setForeground(new java.awt.Color(255, 255, 255));
         claveAdmin.setBorder(null);
-        panelPrincipal.add(claveAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 170, 30));
+        panelPrincipal.add(claveAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 200, 170, 30));
 
         nombreAdmin.setBackground(new java.awt.Color(23, 90, 41));
         nombreAdmin.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         nombreAdmin.setForeground(new java.awt.Color(255, 255, 255));
         nombreAdmin.setBorder(null);
-        panelPrincipal.add(nombreAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 250, 170, 30));
+        panelPrincipal.add(nombreAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 140, 170, 30));
 
         admin.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         admin.setForeground(new java.awt.Color(0, 0, 0));
         admin.setText("Admin:");
-        panelPrincipal.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 250, -1, -1));
+        panelPrincipal.add(admin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, -1, -1));
 
         password.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         password.setForeground(new java.awt.Color(0, 0, 0));
         password.setText("Contraseña:");
-        panelPrincipal.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, -1, -1));
+        panelPrincipal.add(password, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 200, -1, -1));
 
         login.setBackground(new java.awt.Color(111, 204, 102));
         login.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -88,10 +88,10 @@ public class FAdmin extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        panelPrincipal.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 400, 120, 40));
+        panelPrincipal.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 120, 40));
 
         titulo2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ADMINISTRADOR.png"))); // NOI18N
-        panelPrincipal.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+        panelPrincipal.add(titulo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-110, 0, 600, -1));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -101,7 +101,7 @@ public class FAdmin extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
+        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 380, -1, -1));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -110,12 +110,21 @@ public class FAdmin extends javax.swing.JFrame {
                 volverActionPerformed(evt);
             }
         });
-        panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+        panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 70, 70));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(panelPrincipal, java.awt.BorderLayout.CENTER);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(panelPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

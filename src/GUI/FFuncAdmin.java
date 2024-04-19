@@ -35,7 +35,6 @@ public class FFuncAdmin extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        titulo5 = new javax.swing.JLabel();
         alta = new javax.swing.JButton();
         baja = new javax.swing.JButton();
         infoPartidas = new javax.swing.JButton();
@@ -49,9 +48,6 @@ public class FFuncAdmin extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        titulo5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ADMINISTRADOR.png"))); // NOI18N
-        jPanel1.add(titulo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
-
         alta.setBackground(new java.awt.Color(111, 204, 102));
         alta.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         alta.setForeground(new java.awt.Color(0, 0, 0));
@@ -63,7 +59,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
                 altaActionPerformed(evt);
             }
         });
-        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 180, 40));
+        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 180, 40));
 
         baja.setBackground(new java.awt.Color(111, 204, 102));
         baja.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -76,7 +72,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
                 bajaActionPerformed(evt);
             }
         });
-        jPanel1.add(baja, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 390, 180, 40));
+        jPanel1.add(baja, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 180, 40));
 
         infoPartidas.setBackground(new java.awt.Color(111, 204, 102));
         infoPartidas.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -89,7 +85,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
                 infoPartidasActionPerformed(evt);
             }
         });
-        jPanel1.add(infoPartidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 310, 180, 40));
+        jPanel1.add(infoPartidas, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 260, 180, 40));
 
         cargaFichero.setBackground(new java.awt.Color(111, 204, 102));
         cargaFichero.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -102,7 +98,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
                 cargaFicheroActionPerformed(evt);
             }
         });
-        jPanel1.add(cargaFichero, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 390, 180, 40));
+        jPanel1.add(cargaFichero, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 310, 180, 40));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -112,7 +108,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 380, -1, -1));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -121,10 +117,10 @@ public class FFuncAdmin extends javax.swing.JFrame {
                 volverActionPerformed(evt);
             }
         });
-        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 70, 70));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -241,7 +237,6 @@ public class FFuncAdmin extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea mensaje;
-    private javax.swing.JLabel titulo5;
     private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

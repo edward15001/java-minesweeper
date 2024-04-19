@@ -1,6 +1,8 @@
 package GUI;
 
 import buscaminasjunio.Clase_Entre_Ventanas;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +25,14 @@ public class FMenuInicial extends javax.swing.JFrame {
         data.getUsers().guardarListado(data.getFicheroUsuarios());
         data.getAlmacenPartidas().guardarFichero(data.getFicheroPartidas()); // Guarda lista de partidas
     }
+    
+    public void ImageScale(){
+        ImageIcon icon = new ImageIcon("/IMG/fondoBatalla.jpg");
+        Image img = icon.getImage();
+        Image imgScale = img.getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_FAST);
+        ImageIcon scaledImg = new ImageIcon(imgScale);
+        fondo.setIcon(scaledImg);
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -36,8 +46,8 @@ public class FMenuInicial extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
-        setSize(new java.awt.Dimension(700, 800));
 
+        jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         boss.setBackground(new java.awt.Color(111, 204, 102));
@@ -51,7 +61,7 @@ public class FMenuInicial extends javax.swing.JFrame {
                 bossActionPerformed(evt);
             }
         });
-        jPanel1.add(boss, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 180, 40));
+        jPanel1.add(boss, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
 
         user.setBackground(new java.awt.Color(111, 204, 102));
         user.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -64,23 +74,23 @@ public class FMenuInicial extends javax.swing.JFrame {
                 userActionPerformed(evt);
             }
         });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 180, 40));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 145, -1));
 
         titulo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-BUSCAMINAS.png"))); // NOI18N
-        jPanel1.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel1.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 10, 630, -1));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

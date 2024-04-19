@@ -48,7 +48,7 @@ public class FRanking extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 400, 480));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 280, 280));
 
         ordenAlf.setBackground(new java.awt.Color(111, 204, 102));
         ordenAlf.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -61,7 +61,7 @@ public class FRanking extends javax.swing.JFrame {
                 ordenAlfActionPerformed(evt);
             }
         });
-        jPanel1.add(ordenAlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 660, 250, 40));
+        jPanel1.add(ordenAlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 190, 40));
 
         ordenV.setBackground(new java.awt.Color(111, 204, 102));
         ordenV.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -74,23 +74,23 @@ public class FRanking extends javax.swing.JFrame {
                 ordenVActionPerformed(evt);
             }
         });
-        jPanel1.add(ordenV, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, 250, 40));
+        jPanel1.add(ordenV, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 210, 40));
 
         titulo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-RANKING.png"))); // NOI18N
-        jPanel1.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+        jPanel1.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 480, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

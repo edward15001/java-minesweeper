@@ -31,6 +31,7 @@ public class FTablero extends javax.swing.JFrame {
         turno.setText(data.getPartida().getJugador_actual().getUsuario());
         puntoP1.setText(String.valueOf(data.getPartida().getResult().getMinasJ1()));
         puntoP2.setText(String.valueOf(data.getPartida().getResult().getMinasJ2()));
+
     }
 
     private void crearBotones() {  //Coloca todos los botones en el tablero.
@@ -161,40 +162,40 @@ public class FTablero extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         Player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/iconsRed/icons8-usuario-96.png"))); // NOI18N
-        jPanel1.add(Player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, -1, -1));
+        jPanel1.add(Player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         Player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/iconsGreen/icons8-usuario-96.png"))); // NOI18N
-        jPanel1.add(Player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 10, -1, -1));
+        jPanel1.add(Player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
 
         nombreP1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         nombreP1.setForeground(new java.awt.Color(0, 0, 0));
         nombreP1.setText(":");
-        jPanel1.add(nombreP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
+        jPanel1.add(nombreP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
         nombreP2.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         nombreP2.setForeground(new java.awt.Color(0, 0, 0));
         nombreP2.setText(":");
-        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, -1, -1));
+        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
 
         puntoP1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         puntoP1.setForeground(new java.awt.Color(0, 0, 0));
         puntoP1.setText(".");
-        jPanel1.add(puntoP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, -1, -1));
+        jPanel1.add(puntoP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         puntoP2.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         puntoP2.setForeground(new java.awt.Color(0, 0, 0));
         puntoP2.setText(".");
-        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 160, 10, 20));
+        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 10, 20));
 
         turno.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         turno.setForeground(new java.awt.Color(0, 0, 0));
         turno.setText(":");
-        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
+        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
 
         texto.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         texto.setForeground(new java.awt.Color(0, 0, 0));
         texto.setText("TURNO DE");
-        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
+        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -203,7 +204,7 @@ public class FTablero extends javax.swing.JFrame {
                 volverActionPerformed(evt);
             }
         });
-        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 70, 70));
 
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

@@ -44,13 +44,13 @@ public class FCaraACara extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tutulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-CARA-A-CARA.png"))); // NOI18N
-        jPanel1.add(tutulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel1.add(tutulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -10, 550, -1));
 
         desplegable.setBackground(new java.awt.Color(111, 204, 102));
         desplegable.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         desplegable.setForeground(new java.awt.Color(0, 0, 0));
         desplegable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 650, 120, 30));
+        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 120, 30));
 
         select.setBackground(new java.awt.Color(23, 90, 41));
         select.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -61,7 +61,7 @@ public class FCaraACara extends javax.swing.JFrame {
         select.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         select.setIconTextGap(5);
         select.setOpaque(true);
-        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 650, 250, 30));
+        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 250, 30));
 
         comprobar.setBackground(new java.awt.Color(111, 204, 102));
         comprobar.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -74,7 +74,7 @@ public class FCaraACara extends javax.swing.JFrame {
                 comprobarActionPerformed(evt);
             }
         });
-        jPanel1.add(comprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 710, 180, 40));
+        jPanel1.add(comprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 180, 40));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -84,20 +84,20 @@ public class FCaraACara extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 400, 480));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 360, 340));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

@@ -52,46 +52,46 @@ public class FAltaBaja extends javax.swing.JFrame {
                 altaActionPerformed(evt);
             }
         });
-        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 420, 180, 40));
+        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 180, 40));
 
         nombre.setBackground(new java.awt.Color(51, 246, 64));
         nombre.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setText("Usuario:");
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, -1, -1));
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
 
         nombreUsuario.setBackground(new java.awt.Color(23, 90, 41));
         nombreUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         nombreUsuario.setBorder(null);
-        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 170, 30));
+        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 30));
 
         claveUsuario.setBackground(new java.awt.Color(23, 90, 41));
         claveUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         claveUsuario.setForeground(new java.awt.Color(255, 255, 255));
         claveUsuario.setBorder(null);
-        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 170, 30));
+        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 170, 30));
 
         clave.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         clave.setForeground(new java.awt.Color(255, 255, 255));
         clave.setText("Contraseña:");
-        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, -1, -1));
+        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
 
         titulo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ALTA_BAJA.png"))); // NOI18N
-        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, 530, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
-        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

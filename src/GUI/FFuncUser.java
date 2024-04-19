@@ -75,7 +75,7 @@ public class FFuncUser extends javax.swing.JFrame {
                 perfilActionPerformed(evt);
             }
         });
-        panelPrincipal.add(perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 180, 40));
+        panelPrincipal.add(perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 180, 40));
 
         ranking.setBackground(new java.awt.Color(111, 204, 102));
         ranking.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -88,7 +88,7 @@ public class FFuncUser extends javax.swing.JFrame {
                 rankingActionPerformed(evt);
             }
         });
-        panelPrincipal.add(ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 180, 40));
+        panelPrincipal.add(ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 180, 40));
 
         newGame.setBackground(new java.awt.Color(111, 204, 102));
         newGame.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -101,10 +101,10 @@ public class FFuncUser extends javax.swing.JFrame {
                 newGameActionPerformed(evt);
             }
         });
-        panelPrincipal.add(newGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 430, 180, 40));
+        panelPrincipal.add(newGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 180, 40));
 
         titulo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-JUGADOR.png"))); // NOI18N
-        panelPrincipal.add(titulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        panelPrincipal.add(titulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 10, 470, -1));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -114,12 +114,12 @@ public class FFuncUser extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
+        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
-        getContentPane().add(panelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
+        getContentPane().add(panelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
