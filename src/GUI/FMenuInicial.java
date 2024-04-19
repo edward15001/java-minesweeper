@@ -7,11 +7,10 @@ import buscaminasjunio.Clase_Entre_Ventanas;
  * @author edwar
  */
 public class FMenuInicial extends javax.swing.JFrame {
-    
+
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
     private static FAdmin admin = new FAdmin();
     private static FUser login = new FUser();
-    
 
     public FMenuInicial() {
         initComponents();
@@ -19,8 +18,8 @@ public class FMenuInicial extends javax.swing.JFrame {
         data.getAlmacenPartidas().cargarFichero(data.getFicheroPartidas()); // Carga de partidas
         data.organizarPartidas();
     }
-    
-    public void cierre(){
+
+    public void cierre() {
         data.getUsers().guardarListado(data.getFicheroUsuarios());
         data.getAlmacenPartidas().guardarFichero(data.getFicheroPartidas()); // Guarda lista de partidas
     }
@@ -30,28 +29,16 @@ public class FMenuInicial extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        user = new javax.swing.JButton();
         boss = new javax.swing.JButton();
+        user = new javax.swing.JButton();
         titulo1 = new javax.swing.JLabel();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         setSize(new java.awt.Dimension(700, 800));
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        user.setBackground(new java.awt.Color(111, 204, 102));
-        user.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
-        user.setForeground(new java.awt.Color(0, 0, 0));
-        user.setText("USUARIO");
-        user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        user.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        user.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                userActionPerformed(evt);
-            }
-        });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 180, 40));
 
         boss.setBackground(new java.awt.Color(111, 204, 102));
         boss.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -65,6 +52,19 @@ public class FMenuInicial extends javax.swing.JFrame {
             }
         });
         jPanel1.add(boss, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 370, 180, 40));
+
+        user.setBackground(new java.awt.Color(111, 204, 102));
+        user.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        user.setForeground(new java.awt.Color(0, 0, 0));
+        user.setText("USUARIO");
+        user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        user.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        user.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                userActionPerformed(evt);
+            }
+        });
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 440, 180, 40));
 
         titulo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-BUSCAMINAS.png"))); // NOI18N
         jPanel1.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
@@ -87,19 +87,19 @@ public class FMenuInicial extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
+    private void bossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bossActionPerformed
+        admin.setVisible(true);
+        admin.setLocationRelativeTo(null);
+        admin.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_bossActionPerformed
+
     private void userActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userActionPerformed
         login.setVisible(true);
         login.setLocationRelativeTo(null);
         login.setDefaultCloseOperation(EXIT_ON_CLOSE);
         dispose();
-        login.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_userActionPerformed
-
-    private void bossActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bossActionPerformed
-        admin.setVisible(true);
-        admin.setLocationRelativeTo(null);
-        admin.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        dispose();
-    }//GEN-LAST:event_bossActionPerformed
+    }//GEN-LAST:event_userActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

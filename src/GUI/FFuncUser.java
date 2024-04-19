@@ -143,7 +143,7 @@ public class FFuncUser extends javax.swing.JFrame {
         clasificacion.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_rankingActionPerformed
 
     private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
-        FCaraACara ventanaPerfil = new FCaraACara();
+        FStats ventanaPerfil = new FStats();
         ventanaPerfil.setVisible(true);
         ventanaPerfil.setLocationRelativeTo(null);
         ventanaPerfil.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_perfilActionPerformed

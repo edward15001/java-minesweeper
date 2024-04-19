@@ -13,6 +13,7 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 public class FFuncAdmin extends javax.swing.JFrame {
     
     public static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FMenuInicial menu = new FMenuInicial();
     
     public FFuncAdmin() {
         initComponents();
@@ -41,6 +42,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
         cargaFichero = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         mensaje = new javax.swing.JTextArea();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -112,6 +114,15 @@ public class FFuncAdmin extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 520, -1, -1));
 
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
 
@@ -167,7 +178,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
         });    }//GEN-LAST:event_bajaActionPerformed
 
     private void infoPartidasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_infoPartidasActionPerformed
-        FStatsPartidas info = new FStatsPartidas();
+        FCaraACara info = new FCaraACara();
         info.setVisible(true);
         info.setLocationRelativeTo(null);
         info.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -177,6 +188,13 @@ public class FFuncAdmin extends javax.swing.JFrame {
         data.getUsers().cargarListadoNuevosUsuarios(data.getFicheroNuevosUsuarios());  //Carga un listado de usuarios de un fichero.txt
         JOptionPane.showMessageDialog(null, "Jugadores cargados");
     }//GEN-LAST:event_cargaFicheroActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -224,5 +242,6 @@ public class FFuncAdmin extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea mensaje;
     private javax.swing.JLabel titulo5;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

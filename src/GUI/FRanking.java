@@ -4,17 +4,19 @@
  */
 package GUI;
 
+import buscaminasjunio.Clase_Entre_Ventanas;
+
 /**
  *
  * @author edwar
  */
 public class FRanking extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FrameRanking
-     */
+    private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    
     public FRanking() {
         initComponents();
+        mensaje.setEditable(false);
     }
 
     /**
@@ -26,21 +28,81 @@ public class FRanking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        mensaje = new javax.swing.JTextArea();
+        ordenAlf = new javax.swing.JButton();
+        ordenV = new javax.swing.JButton();
+        titulo9 = new javax.swing.JLabel();
+        fondo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+
+        mensaje.setBackground(new java.awt.Color(111, 204, 102));
+        mensaje.setColumns(20);
+        mensaje.setForeground(new java.awt.Color(111, 204, 102));
+        mensaje.setRows(5);
+        jScrollPane1.setViewportView(mensaje);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 140, 400, 480));
+
+        ordenAlf.setBackground(new java.awt.Color(111, 204, 102));
+        ordenAlf.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        ordenAlf.setForeground(new java.awt.Color(0, 0, 0));
+        ordenAlf.setText("ORDEN ALFABÉTICO");
+        ordenAlf.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        ordenAlf.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ordenAlf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordenAlfActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ordenAlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 660, 250, 40));
+
+        ordenV.setBackground(new java.awt.Color(111, 204, 102));
+        ordenV.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
+        ordenV.setForeground(new java.awt.Color(0, 0, 0));
+        ordenV.setText("ORDEN VICTORIAS");
+        ordenV.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        ordenV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ordenV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ordenVActionPerformed(evt);
+            }
+        });
+        jPanel1.add(ordenV, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 660, 250, 40));
+
+        titulo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-RANKING.png"))); // NOI18N
+        jPanel1.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador2.jpg"))); // NOI18N
+        jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 800));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ordenAlfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenAlfActionPerformed
+        mensaje.setText(data.getJ1().ordenarPorNombre());
+    }//GEN-LAST:event_ordenAlfActionPerformed
+
+    private void ordenVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenVActionPerformed
+        mensaje.setText(data.getJ1().ordenarPorVictorias());
+    }//GEN-LAST:event_ordenVActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +141,12 @@ public class FRanking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel fondo;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea mensaje;
+    private javax.swing.JButton ordenAlf;
+    private javax.swing.JButton ordenV;
+    private javax.swing.JLabel titulo9;
     // End of variables declaration//GEN-END:variables
 }

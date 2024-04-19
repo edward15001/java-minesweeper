@@ -8,6 +8,7 @@ import java.util.ArrayList;
  * @author edwar
  */
 public class Partida implements Serializable {
+
     private Jugador jugador_actual, jugador_esperando, ganador;
     private Tablero tab = new Tablero();
     private Marcador result = new Marcador();
@@ -16,7 +17,6 @@ public class Partida implements Serializable {
     private transient int posX, posY;   // Posicion que ocupan las casillas
     private transient boolean jugador1; // Identificador para jugador actual y ganador
     private transient Color colorCasilla = Color.RED;
-
 
     public Partida(Jugador first, Jugador second) {  // Crea la partida inicializando el tablero y los jugadores
         jugador_actual = first;
@@ -30,7 +30,7 @@ public class Partida implements Serializable {
 
     public void jugar() {
         if (tab.hayMina(this.posX, this.posY)) {  // Actualiza el marcador si se selecciona una mina
-            if (jugador1 == true) {  
+            if (jugador1 == true) {
                 result.addMinaJ1();
             } else {
                 result.addMinaJ2();
@@ -129,12 +129,25 @@ public class Partida implements Serializable {
         return almacen;
     }
 
+    public String printMovimientos() {
+        String movimientos = "";
+        for (Movimiento m : this.getMovs()) {
+            movimientos += (m.printMov()+ "\n");
+        }
+        return movimientos;
+    }
 
     @Override
     public boolean equals(Object o) {  // Comparación de partidas
-        if (o == this) return true;
-        if (o == null) return false;
-        if (o.getClass() != this.getClass()) return false;
+        if (o == this) {
+            return true;
+        }
+        if (o == null) {
+            return false;
+        }
+        if (o.getClass() != this.getClass()) {
+            return false;
+        }
 
         Partida aux = (Partida) o;
         return ((this.jugador_actual.equals(aux.jugador_actual) || this.jugador_actual.equals(aux.jugador_esperando)) && (this.jugador_esperando.equals(aux.jugador_actual) || this.jugador_esperando.equals(aux.jugador_esperando)) && this.getResult().equals(aux.getResult()) && this.getMovs().containsAll(aux.getMovs()));
