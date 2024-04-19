@@ -20,6 +20,7 @@ public class FTablero extends javax.swing.JFrame {
     private JButton[][] botonCasilla;  //Definimos una matriz de botones para rellenar nuestro tablero.
     private ArrayList<Casilla> seleccionadas = new ArrayList<Casilla>();  //Almacena las casillas que se van seleccionando.
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FFuncUser user = new FFuncUser();
 
     public FTablero() {
         crearBotones();
@@ -150,6 +151,7 @@ public class FTablero extends javax.swing.JFrame {
         puntoP2 = new javax.swing.JLabel();
         turno = new javax.swing.JLabel();
         texto = new javax.swing.JLabel();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -194,6 +196,15 @@ public class FTablero extends javax.swing.JFrame {
         texto.setText("TURNO DE");
         jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, -1, -1));
 
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 720, 70, 70));
+
         fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
@@ -201,6 +212,12 @@ public class FTablero extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        user.setVisible(true);
+        user.setLocationRelativeTo(null);
+        user.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -249,5 +266,6 @@ public class FTablero extends javax.swing.JFrame {
     private javax.swing.JLabel puntoP2;
     private javax.swing.JLabel texto;
     private javax.swing.JLabel turno;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
