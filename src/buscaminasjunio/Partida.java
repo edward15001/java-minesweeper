@@ -13,7 +13,7 @@ public class Partida implements Serializable {
     private Tablero tab = new Tablero();
     private Marcador result = new Marcador();
     private ArrayList<Movimiento> movs = new ArrayList<Movimiento>();
-    private static Almacen_partidas aml;
+    private static Almacen_partidas alm = new Almacen_partidas();
     private transient int posX, posY;   // Posicion que ocupan las casillas
     private transient boolean jugador1; // Identificador para jugador actual y ganador
     private transient Color colorCasilla = Color.RED;
@@ -25,7 +25,7 @@ public class Partida implements Serializable {
     }
 
     public void info_partida() {
-        aml.info_partida(this);
+        alm.info_partida(this);
     }
 
     public void jugar() {
@@ -69,6 +69,7 @@ public class Partida implements Serializable {
                 fila += (tab.getCasilla(i, j).getContenido() + " ");
             }
             matriz += (fila + "\n");
+            fila = "";
         }
 
         return matriz;
@@ -159,6 +160,6 @@ public class Partida implements Serializable {
      * @return
      */
     public Almacen_partidas getAlmacen() {
-        return aml;
+        return alm;
     }
 }

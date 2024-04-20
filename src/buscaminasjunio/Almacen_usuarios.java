@@ -71,7 +71,7 @@ public class Almacen_usuarios implements Serializable {
     }
 
     public void alta(Jugador j) {
-        boolean add = Almacen_usuarios.usuariosTotal.add(j);
+        boolean add = this.usuariosTotal.add(j);
     }
 
     public void baja(Jugador j) {

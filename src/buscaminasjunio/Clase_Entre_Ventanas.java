@@ -6,14 +6,14 @@ public class Clase_Entre_Ventanas {
 
     private static final Administrador admin=new Administrador();
     private static Almacen_usuarios usuarios=new Almacen_usuarios();  //Recibe el almacen de usuarios.
-    private static Almacen_partidas partidasTotal =new Almacen_partidas();  //Contendrá todas las partidas que se han jugado.
-    private static Jugador aux, J1, J2;
+    private static Almacen_partidas partidas =new Almacen_partidas();  //Contendrá todas las partidas que se han jugado.
+    private static Jugador  aux, J1, J2;
     private Partida partida;
-    private final File ficheroUsuarios = new File("usuarios.ser");
-    private final File ficheroNuevosUsuarios = new File("nuevosUsuarios.txt");
-    private final File ficheroPartidas = new File("partidas.ser");
-    private final File ficheroTableroMovimientos = new File("tableroymovimientos.txt");
-
+    private File ficheroUsuarios = new File("usuarios.ser");
+    private File ficheroNuevosUsuarios = new File("nuevosUsuarios.txt");
+    private File ficheroPartidas = new File("partidas.ser");
+    private File ficheroTableroMovimientos = new File("tableroymovimientos.txt");
+    
     public File getFicheroTableroMovimientos(){
         return this.ficheroTableroMovimientos;
     }
@@ -35,11 +35,11 @@ public class Clase_Entre_Ventanas {
     }
 
     public Almacen_usuarios getUsers(){
-        return this.usuarios;
+        return Clase_Entre_Ventanas.usuarios;
     }
 
     public void setJugadorAux(Jugador j){
-        this.aux=j;
+        Clase_Entre_Ventanas.aux=j;
     }
 
     public void organizarPartidas(){  //Reparte las partidas de la lista a cada usuario.
@@ -73,7 +73,7 @@ public class Clase_Entre_Ventanas {
     }
 
     public Almacen_partidas getAlmacenPartidas(){  //Devuelve el almacén con todas las partidas jugadas.
-        return Clase_Entre_Ventanas.partidasTotal;
+        return Clase_Entre_Ventanas.partidas;
     }
 
     public void setJ1(Jugador j1){

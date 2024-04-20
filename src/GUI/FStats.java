@@ -18,6 +18,13 @@ public class FStats extends javax.swing.JFrame {
 
     public FStats() {
         initComponents();
+        rellenarCombo();
+    }
+
+    private void rellenarCombo() {
+        for (Partida p : data.getAlmacenPartidas().getPartidasTotal()) {
+            desplegable.addItem(p);
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -103,7 +110,7 @@ public class FStats extends javax.swing.JFrame {
 
         mensaje.setBackground(new java.awt.Color(111, 204, 102));
         mensaje.setColumns(20);
-        mensaje.setForeground(new java.awt.Color(111, 204, 102));
+        mensaje.setForeground(new java.awt.Color(0, 0, 0));
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 

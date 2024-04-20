@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  *
  * @author edwar
  */
-public class FAdmin extends javax.swing.JFrame {
+public class FAdmin extends javax.swing.JFrame{
 
     String user = new String();
     String passw = new String();
@@ -19,6 +19,7 @@ public class FAdmin extends javax.swing.JFrame {
     private void comprobar() {  //Comprueba que los datos introducidos corresponden con los del administrador.
         if (user.equals(data.getAdmin().getNombre()) && passw.equals(data.getAdmin().getContrasenia())) {
             //Si las credenciales introducidas son correctas.
+            
             ventanaAvanzada.setVisible(true);
             ventanaAvanzada.setLocationRelativeTo(null);
             ventanaAvanzada.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -139,17 +140,19 @@ public class FAdmin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        user = nombreAdmin.getText();
-        passw = claveAdmin.getText();
-        comprobar();    }//GEN-LAST:event_loginActionPerformed
-
     private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
         menu.setVisible(true);
         menu.setLocationRelativeTo(null);
         menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
         dispose();
     }//GEN-LAST:event_volverActionPerformed
+
+    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
+        user = nombreAdmin.getText();
+        passw = claveAdmin.getText();
+        comprobar();
+        
+    }//GEN-LAST:event_loginActionPerformed
 
     /**
      * @param args the command line arguments
