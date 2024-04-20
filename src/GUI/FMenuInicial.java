@@ -47,7 +47,7 @@ public class FMenuInicial extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(500, 600));
+        jPanel1.setPreferredSize(new java.awt.Dimension(900, 600));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         boss.setBackground(new java.awt.Color(111, 204, 102));
@@ -61,7 +61,7 @@ public class FMenuInicial extends javax.swing.JFrame {
                 bossActionPerformed(evt);
             }
         });
-        jPanel1.add(boss, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, -1, -1));
+        jPanel1.add(boss, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 230, 180, 40));
 
         user.setBackground(new java.awt.Color(111, 204, 102));
         user.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -74,12 +74,12 @@ public class FMenuInicial extends javax.swing.JFrame {
                 userActionPerformed(evt);
             }
         });
-        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 145, -1));
+        jPanel1.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 340, 180, 40));
 
         titulo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-BUSCAMINAS.png"))); // NOI18N
-        jPanel1.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 10, 630, -1));
+        jPanel1.add(titulo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 430, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatallaMod.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

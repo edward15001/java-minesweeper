@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.border.Border;
+import javax.swing.plaf.synth.ColorType;
 
 /**
  *
@@ -41,13 +42,15 @@ public class FTablero extends javax.swing.JFrame {
         for (int fila = 0; fila < 16; fila++) {  //Recorre las filas.
             for (int columna = 0; columna < 16; columna++) {  //Recorre las columnas.
                 botonCasilla[fila][columna] = new JButton();  //Asigna un botón a cada una de las posiciones de la matriz de botones.
+                botonCasilla[fila][columna].setBackground(new java.awt.Color(23,90,41));
                 botonCasilla[fila][columna].setName(fila + "," + columna);  //Le otorga un nombre a cada botón según su coordenada.
                 Border border = BorderFactory.createLineBorder(Color.black);
+                //botonCasilla.setBackground(new java.awt.Color(163, 30, 29));
                 botonCasilla[fila][columna].setBorder(border);
                 if (fila == 0 && columna == 0) {   //Coloca el primer botón, a partir del cual se distribuirán los demás.
-                    botonCasilla[fila][columna].setBounds(110, 280, 30, 30);
+                    botonCasilla[fila][columna].setBounds(200, 90, 30, 30);
                 } else if (fila == 0 && columna != 0) {  //Coloca la primera fila de botones a partir del anterior.
-                    botonCasilla[fila][columna].setBounds(botonCasilla[fila][columna - 1].getX() + botonCasilla[fila][columna - 1].getWidth(), 280, 30, 30);
+                    botonCasilla[fila][columna].setBounds(botonCasilla[fila][columna - 1].getX() + botonCasilla[fila][columna - 1].getWidth(), 90, 30, 30);
                 } else {  //El resto de botones. Crea el resto de filas a partir de la anterior.
                     botonCasilla[fila][columna].setBounds(botonCasilla[fila - 1][columna].getX(), botonCasilla[fila - 1][columna].getY() + botonCasilla[fila - 1][columna].getHeight(), 30, 30);
                 }
@@ -75,6 +78,8 @@ public class FTablero extends javax.swing.JFrame {
         partida.setMovimientos(coordX, coordY);
         Casilla aux = partida.getTab().getCasilla(coordX, coordY);
         boton.setText(aux.getContenido());
+        boton.setBackground(new java.awt.Color(23,90,41));
+        boton.setForeground(new java.awt.Color(23,90,41));
         //Coloca en el botón el símbolo tras ser revelado.
 
         if (aux.getContenido().equals("0") && this.seleccionadas.contains(aux) == false) {  //Si el contenido de la casilla es 0 y no ha sido seleccionada.
@@ -161,41 +166,65 @@ public class FTablero extends javax.swing.JFrame {
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        Player1.setBackground(new java.awt.Color(163, 30, 29));
         Player1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/iconsRed/icons8-usuario-96.png"))); // NOI18N
+        Player1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        Player1.setOpaque(true);
         jPanel1.add(Player1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
+        Player2.setBackground(new java.awt.Color(23, 90, 41));
         Player2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/iconsGreen/icons8-usuario-96.png"))); // NOI18N
-        jPanel1.add(Player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 10, -1, -1));
+        Player2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        Player2.setOpaque(true);
+        jPanel1.add(Player2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 10, -1, -1));
 
+        nombreP1.setBackground(new java.awt.Color(23, 90, 41));
         nombreP1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         nombreP1.setForeground(new java.awt.Color(0, 0, 0));
         nombreP1.setText(":");
-        jPanel1.add(nombreP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
+        nombreP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        nombreP1.setOpaque(true);
+        jPanel1.add(nombreP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, -1, -1));
 
+        nombreP2.setBackground(new java.awt.Color(23, 90, 41));
         nombreP2.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         nombreP2.setForeground(new java.awt.Color(0, 0, 0));
         nombreP2.setText(":");
-        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 110, -1, -1));
+        nombreP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        nombreP2.setOpaque(true);
+        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 130, -1, -1));
 
+        puntoP1.setBackground(new java.awt.Color(23, 90, 41));
         puntoP1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         puntoP1.setForeground(new java.awt.Color(0, 0, 0));
         puntoP1.setText(".");
-        jPanel1.add(puntoP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        puntoP1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        puntoP1.setOpaque(true);
+        jPanel1.add(puntoP1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, -1, -1));
 
+        puntoP2.setBackground(new java.awt.Color(23, 90, 41));
         puntoP2.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         puntoP2.setForeground(new java.awt.Color(0, 0, 0));
         puntoP2.setText(".");
-        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 140, 10, 20));
+        puntoP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        puntoP2.setOpaque(true);
+        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, -1, -1));
 
+        turno.setBackground(new java.awt.Color(23, 90, 41));
         turno.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         turno.setForeground(new java.awt.Color(0, 0, 0));
         turno.setText(":");
-        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        turno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        turno.setOpaque(true);
+        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
 
+        texto.setBackground(new java.awt.Color(23, 90, 41));
         texto.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
-        texto.setForeground(new java.awt.Color(0, 0, 0));
+        texto.setForeground(new java.awt.Color(255, 255, 255));
         texto.setText("TURNO DE");
-        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 20, -1, -1));
+        texto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        texto.setOpaque(true);
+        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -206,7 +235,7 @@ public class FTablero extends javax.swing.JFrame {
         });
         jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 70, 70));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatallaMod2.png"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);

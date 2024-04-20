@@ -9,6 +9,7 @@ import java.awt.event.WindowAdapter;
 public class FAltaBaja extends javax.swing.JFrame {
 
     private String name, passw;
+    private static FFuncAdmin adv = new FFuncAdmin();
     
     public FAltaBaja() {
         initComponents();
@@ -29,17 +30,52 @@ public class FAltaBaja extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        alta = new javax.swing.JButton();
+        titulo6 = new javax.swing.JLabel();
         nombre = new javax.swing.JLabel();
+        clave = new javax.swing.JLabel();
         nombreUsuario = new javax.swing.JTextField();
         claveUsuario = new javax.swing.JTextField();
-        clave = new javax.swing.JLabel();
-        titulo6 = new javax.swing.JLabel();
+        alta = new javax.swing.JButton();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(900, 600));
+        setPreferredSize(new java.awt.Dimension(900, 600));
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        titulo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ALTA_BAJA.png"))); // NOI18N
+        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 40, -1, -1));
+
+        nombre.setBackground(new java.awt.Color(23, 90, 41));
+        nombre.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
+        nombre.setText("Usuario:");
+        nombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        nombre.setOpaque(true);
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
+
+        clave.setBackground(new java.awt.Color(23, 90, 41));
+        clave.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
+        clave.setForeground(new java.awt.Color(255, 255, 255));
+        clave.setText("Contraseña:");
+        clave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        clave.setOpaque(true);
+        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
+
+        nombreUsuario.setBackground(new java.awt.Color(23, 90, 41));
+        nombreUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
+        nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        nombreUsuario.setBorder(null);
+        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 170, 30));
+
+        claveUsuario.setBackground(new java.awt.Color(23, 90, 41));
+        claveUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
+        claveUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        claveUsuario.setBorder(null);
+        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 170, 30));
 
         alta.setBackground(new java.awt.Color(111, 204, 102));
         alta.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -52,35 +88,18 @@ public class FAltaBaja extends javax.swing.JFrame {
                 altaActionPerformed(evt);
             }
         });
-        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 350, 180, 40));
+        jPanel1.add(alta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 180, 40));
 
-        nombre.setBackground(new java.awt.Color(51, 246, 64));
-        nombre.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        nombre.setForeground(new java.awt.Color(255, 255, 255));
-        nombre.setText("Usuario:");
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 240, -1, -1));
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 70, 70));
 
-        nombreUsuario.setBackground(new java.awt.Color(23, 90, 41));
-        nombreUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
-        nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        nombreUsuario.setBorder(null);
-        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, 170, 30));
-
-        claveUsuario.setBackground(new java.awt.Color(23, 90, 41));
-        claveUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
-        claveUsuario.setForeground(new java.awt.Color(255, 255, 255));
-        claveUsuario.setBorder(null);
-        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 290, 170, 30));
-
-        clave.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        clave.setForeground(new java.awt.Color(255, 255, 255));
-        clave.setText("Contraseña:");
-        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, -1, -1));
-
-        titulo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-ALTA_BAJA.png"))); // NOI18N
-        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-60, 0, 530, -1));
-
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugadorMod.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -102,6 +121,13 @@ public class FAltaBaja extends javax.swing.JFrame {
         passw = claveUsuario.getText();  //Guarda la contraseña.
         this.dispose();  //Cierra la ventana.
     }//GEN-LAST:event_altaActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        adv.setVisible(true);
+        adv.setLocationRelativeTo(null);
+        adv.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -150,5 +176,6 @@ public class FAltaBaja extends javax.swing.JFrame {
     private javax.swing.JLabel nombre;
     private javax.swing.JTextField nombreUsuario;
     private javax.swing.JLabel titulo6;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

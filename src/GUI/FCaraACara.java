@@ -11,6 +11,7 @@ import buscaminasjunio.Usuario;
 public class FCaraACara extends javax.swing.JFrame {
 
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FFuncAdmin adv = new FFuncAdmin();
 
     public FCaraACara() {
         initComponents();
@@ -37,6 +38,7 @@ public class FCaraACara extends javax.swing.JFrame {
         comprobar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         mensaje = new javax.swing.JTextArea();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -44,13 +46,13 @@ public class FCaraACara extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tutulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-CARA-A-CARA.png"))); // NOI18N
-        jPanel1.add(tutulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, -10, 550, -1));
+        jPanel1.add(tutulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 460, -1));
 
         desplegable.setBackground(new java.awt.Color(111, 204, 102));
         desplegable.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
         desplegable.setForeground(new java.awt.Color(0, 0, 0));
         desplegable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 450, 120, 30));
+        jPanel1.add(desplegable, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 450, 120, 30));
 
         select.setBackground(new java.awt.Color(23, 90, 41));
         select.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -61,7 +63,7 @@ public class FCaraACara extends javax.swing.JFrame {
         select.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         select.setIconTextGap(5);
         select.setOpaque(true);
-        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 250, 30));
+        jPanel1.add(select, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 450, 230, 30));
 
         comprobar.setBackground(new java.awt.Color(111, 204, 102));
         comprobar.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -74,7 +76,7 @@ public class FCaraACara extends javax.swing.JFrame {
                 comprobarActionPerformed(evt);
             }
         });
-        jPanel1.add(comprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 520, 180, 40));
+        jPanel1.add(comprobar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 500, 180, 40));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -84,9 +86,18 @@ public class FCaraACara extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 360, 340));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 360, 320));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 70, 70));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugadorMod.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -112,6 +123,13 @@ public class FCaraACara extends javax.swing.JFrame {
             mensaje.setText(data.getJ1().getFaceit().playerComparison());
         }
     }//GEN-LAST:event_comprobarActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        adv.setVisible(true);
+        adv.setLocationRelativeTo(null);
+        adv.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -164,5 +182,6 @@ public class FCaraACara extends javax.swing.JFrame {
     private javax.swing.JTextArea mensaje;
     private javax.swing.JLabel select;
     private javax.swing.JLabel tutulo;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

@@ -44,24 +44,29 @@ public class FUser extends javax.swing.JFrame {
         nombreUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         nombreUsuario.setBorder(null);
-        panelPrincipal.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 200, 170, 30));
+        panelPrincipal.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 170, 30));
 
         claveUsuario.setBackground(new java.awt.Color(23, 90, 41));
         claveUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         claveUsuario.setForeground(new java.awt.Color(255, 255, 255));
         claveUsuario.setBorder(null);
-        panelPrincipal.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 170, 30));
+        panelPrincipal.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 170, 30));
 
+        user.setBackground(new java.awt.Color(23, 90, 41));
         user.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        user.setForeground(new java.awt.Color(0, 0, 0));
+        user.setForeground(new java.awt.Color(255, 255, 255));
         user.setText("Contraseña:");
-        panelPrincipal.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, -1, -1));
+        user.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        user.setOpaque(true);
+        panelPrincipal.add(user, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
-        nombre.setBackground(new java.awt.Color(51, 246, 64));
+        nombre.setBackground(new java.awt.Color(23, 90, 41));
         nombre.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
-        nombre.setForeground(new java.awt.Color(0, 0, 0));
+        nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setText("Usuario:");
-        panelPrincipal.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, -1, -1));
+        nombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        nombre.setOpaque(true);
+        panelPrincipal.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
 
         login.setBackground(new java.awt.Color(111, 204, 102));
         login.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -76,10 +81,10 @@ public class FUser extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        panelPrincipal.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 120, 40));
+        panelPrincipal.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 180, 40));
 
         titulo3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-USUARIO.png"))); // NOI18N
-        panelPrincipal.add(titulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(-50, 0, 470, -1));
+        panelPrincipal.add(titulo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 290, -1));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -89,7 +94,7 @@ public class FUser extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, -1, -1));
+        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 320, 160));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -100,7 +105,7 @@ public class FUser extends javax.swing.JFrame {
         });
         panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 70, 70));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatalla.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoBatallaMod.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -13,6 +13,7 @@ import buscaminasjunio.Clase_Entre_Ventanas;
 public class FRanking extends javax.swing.JFrame {
 
     private static Clase_Entre_Ventanas data = new Clase_Entre_Ventanas();
+    private static FFuncUser user = new FFuncUser();
     
     public FRanking() {
         initComponents();
@@ -34,9 +35,11 @@ public class FRanking extends javax.swing.JFrame {
         ordenAlf = new javax.swing.JButton();
         ordenV = new javax.swing.JButton();
         titulo9 = new javax.swing.JLabel();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -48,7 +51,7 @@ public class FRanking extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 280, 280));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 360, 320));
 
         ordenAlf.setBackground(new java.awt.Color(111, 204, 102));
         ordenAlf.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -61,7 +64,7 @@ public class FRanking extends javax.swing.JFrame {
                 ordenAlfActionPerformed(evt);
             }
         });
-        jPanel1.add(ordenAlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 490, 190, 40));
+        jPanel1.add(ordenAlf, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 460, 210, 40));
 
         ordenV.setBackground(new java.awt.Color(111, 204, 102));
         ordenV.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -74,12 +77,21 @@ public class FRanking extends javax.swing.JFrame {
                 ordenVActionPerformed(evt);
             }
         });
-        jPanel1.add(ordenV, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 490, 210, 40));
+        jPanel1.add(ordenV, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 460, 210, 40));
 
         titulo9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-RANKING.png"))); // NOI18N
-        jPanel1.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 20, 480, -1));
+        jPanel1.add(titulo9, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, -1, -1));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 510, 70, 70));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugadorMod.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -103,6 +115,13 @@ public class FRanking extends javax.swing.JFrame {
     private void ordenVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ordenVActionPerformed
         mensaje.setText(data.getJ1().ordenarPorVictorias());
     }//GEN-LAST:event_ordenVActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        user.setVisible(true);
+        user.setLocationRelativeTo(null);
+        user.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -148,5 +167,6 @@ public class FRanking extends javax.swing.JFrame {
     private javax.swing.JButton ordenAlf;
     private javax.swing.JButton ordenV;
     private javax.swing.JLabel titulo9;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,34 +29,40 @@ public class FJugador2 extends javax.swing.JFrame {
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         titulo6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-JUGADOR.png"))); // NOI18N
-        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 0, 480, -1));
+        jPanel1.add(titulo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 310, -1));
 
         nombreUsuario.setBackground(new java.awt.Color(23, 90, 41));
         nombreUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         nombreUsuario.setForeground(new java.awt.Color(255, 255, 255));
         nombreUsuario.setBorder(null);
-        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 220, 170, 30));
+        jPanel1.add(nombreUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, 170, 30));
 
         claveUsuario.setBackground(new java.awt.Color(23, 90, 41));
         claveUsuario.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
         claveUsuario.setForeground(new java.awt.Color(255, 255, 255));
         claveUsuario.setBorder(null);
-        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 270, 170, 30));
+        jPanel1.add(claveUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 210, 170, 30));
 
-        nombre.setBackground(new java.awt.Color(51, 246, 64));
+        nombre.setBackground(new java.awt.Color(23, 90, 41));
         nombre.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         nombre.setForeground(new java.awt.Color(255, 255, 255));
         nombre.setText("Usuario:");
-        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, -1, -1));
+        nombre.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        nombre.setOpaque(true);
+        jPanel1.add(nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 150, -1, -1));
 
+        clave.setBackground(new java.awt.Color(23, 90, 41));
         clave.setFont(new java.awt.Font("DialogInput", 1, 24)); // NOI18N
         clave.setForeground(new java.awt.Color(255, 255, 255));
         clave.setText("Contraseña:");
-        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+        clave.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        clave.setOpaque(true);
+        jPanel1.add(clave, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 210, -1, -1));
 
         login.setBackground(new java.awt.Color(111, 204, 102));
         login.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -71,9 +77,9 @@ public class FJugador2 extends javax.swing.JFrame {
                 loginActionPerformed(evt);
             }
         });
-        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 330, 180, 40));
+        jPanel1.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 300, 180, 40));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugadorMod.jpg"))); // NOI18N
         jPanel1.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

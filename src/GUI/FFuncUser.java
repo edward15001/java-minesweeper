@@ -15,6 +15,7 @@ import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 public class FFuncUser extends javax.swing.JFrame {
     
     private Clase_Entre_Ventanas datos = new Clase_Entre_Ventanas();
+    private static FMenuInicial menu = new FMenuInicial();
     
     public FFuncUser() {
         initComponents();
@@ -54,12 +55,13 @@ public class FFuncUser extends javax.swing.JFrame {
         titulo4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         mensaje = new javax.swing.JTextArea();
+        volver = new javax.swing.JButton();
         fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(700, 800));
+        setMinimumSize(new java.awt.Dimension(900, 600));
         setResizable(false);
-        setSize(new java.awt.Dimension(700, 800));
+        setSize(new java.awt.Dimension(900, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         panelPrincipal.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -75,7 +77,7 @@ public class FFuncUser extends javax.swing.JFrame {
                 perfilActionPerformed(evt);
             }
         });
-        panelPrincipal.add(perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 180, 40));
+        panelPrincipal.add(perfil, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 180, 40));
 
         ranking.setBackground(new java.awt.Color(111, 204, 102));
         ranking.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -88,7 +90,7 @@ public class FFuncUser extends javax.swing.JFrame {
                 rankingActionPerformed(evt);
             }
         });
-        panelPrincipal.add(ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 180, 40));
+        panelPrincipal.add(ranking, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 190, 180, 40));
 
         newGame.setBackground(new java.awt.Color(111, 204, 102));
         newGame.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -101,10 +103,10 @@ public class FFuncUser extends javax.swing.JFrame {
                 newGameActionPerformed(evt);
             }
         });
-        panelPrincipal.add(newGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 180, 40));
+        panelPrincipal.add(newGame, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 180, 40));
 
         titulo4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/TITULO-JUGADOR.png"))); // NOI18N
-        panelPrincipal.add(titulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-70, 10, 470, -1));
+        panelPrincipal.add(titulo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 40, 310, -1));
 
         jScrollPane1.setViewportBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
 
@@ -114,9 +116,18 @@ public class FFuncUser extends javax.swing.JFrame {
         mensaje.setRows(5);
         jScrollPane1.setViewportView(mensaje);
 
-        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 380, -1, -1));
+        panelPrincipal.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 360, 320, 160));
 
-        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugador.jpg"))); // NOI18N
+        volver.setBackground(new java.awt.Color(111, 204, 102));
+        volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
+        volver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                volverActionPerformed(evt);
+            }
+        });
+        panelPrincipal.add(volver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 510, 70, 70));
+
+        fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/fondoJugadorMod.jpg"))); // NOI18N
         panelPrincipal.add(fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         getContentPane().add(panelPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -147,6 +158,13 @@ public class FFuncUser extends javax.swing.JFrame {
         ventanaPerfil.setVisible(true);
         ventanaPerfil.setLocationRelativeTo(null);
         ventanaPerfil.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_perfilActionPerformed
+
+    private void volverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_volverActionPerformed
+        menu.setVisible(true);
+        menu.setLocationRelativeTo(null);
+        menu.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        dispose();
+    }//GEN-LAST:event_volverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,5 +213,6 @@ public class FFuncUser extends javax.swing.JFrame {
     private javax.swing.JButton perfil;
     private javax.swing.JButton ranking;
     private javax.swing.JLabel titulo4;
+    private javax.swing.JButton volver;
     // End of variables declaration//GEN-END:variables
 }
