@@ -13,7 +13,7 @@ public class Partida implements Serializable {
     private Tablero tab = new Tablero();
     private Marcador result = new Marcador();
     private ArrayList<Movimiento> movs = new ArrayList<Movimiento>();
-    private static Almacen_partidas almacen;
+    private static Almacen_partidas aml;
     private transient int posX, posY;   // Posicion que ocupan las casillas
     private transient boolean jugador1; // Identificador para jugador actual y ganador
     private transient Color colorCasilla = Color.RED;
@@ -25,7 +25,7 @@ public class Partida implements Serializable {
     }
 
     public void info_partida() {
-        almacen.info_partida(this);
+        aml.info_partida(this);
     }
 
     public void jugar() {
@@ -45,10 +45,10 @@ public class Partida implements Serializable {
         setJugador_actual(this.getJugador_esperando());
         setJugador_esperando(Jaux);
         jugador1 = !this.jugador1;  // Cambia de jugador
-        if (getColorCasilla().equals(Color.BLUE)) {  // Cambia el color a la hora de la selección de las casillas
+        if (getColorCasilla().equals(Color.GREEN)) {  // Cambia el color a la hora de la selección de las casillas
             setColorCasilla(Color.RED);
         } else {
-            setColorCasilla(Color.BLUE);
+            setColorCasilla(Color.GREEN);
         }
     }
 
@@ -125,10 +125,6 @@ public class Partida implements Serializable {
         return result;
     }
 
-    public static Almacen_partidas getAlmacen() {
-        return almacen;
-    }
-
     public String printMovimientos() {
         String movimientos = "";
         for (Movimiento m : this.getMovs()) {
@@ -151,5 +147,18 @@ public class Partida implements Serializable {
 
         Partida aux = (Partida) o;
         return ((this.jugador_actual.equals(aux.jugador_actual) || this.jugador_actual.equals(aux.jugador_esperando)) && (this.jugador_esperando.equals(aux.jugador_actual) || this.jugador_esperando.equals(aux.jugador_esperando)) && this.getResult().equals(aux.getResult()) && this.getMovs().containsAll(aux.getMovs()));
+    }
+    
+    @Override
+    public String toString(){  //Redescribe el método para obtener nombres de las partidas.
+        return(this.getJugador_actual().getUsuario()+ "vs" + this.getJugador_esperando().getUsuario());
+    }
+
+    /**
+     *
+     * @return
+     */
+    public Almacen_partidas getAlmacen() {
+        return aml;
     }
 }

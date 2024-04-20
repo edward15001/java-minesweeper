@@ -9,17 +9,10 @@ public class Clase_Entre_Ventanas {
     private static Almacen_partidas partidasTotal =new Almacen_partidas();  //Contendrá todas las partidas que se han jugado.
     private static Jugador aux, J1, J2;
     private Partida partida;
-    private File ficheroUsuarios;
-    private File ficheroNuevosUsuarios;
-    private File ficheroPartidas;
-    private File ficheroTableroMovimientos;
-
-    public Clase_Entre_Ventanas() {
-        this.ficheroTableroMovimientos = new File("tableroymovimientos.txt");
-        this.ficheroPartidas = new File("partidas.ser");
-        this.ficheroNuevosUsuarios = new File("nuevosUsuarios.txt");
-        this.ficheroUsuarios = new File("usuarios.ser");
-    }
+    private final File ficheroUsuarios = new File("usuarios.ser");
+    private final File ficheroNuevosUsuarios = new File("nuevosUsuarios.txt");
+    private final File ficheroPartidas = new File("partidas.ser");
+    private final File ficheroTableroMovimientos = new File("tableroymovimientos.txt");
 
     public File getFicheroTableroMovimientos(){
         return this.ficheroTableroMovimientos;

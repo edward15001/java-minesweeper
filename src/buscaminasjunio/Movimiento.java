@@ -5,7 +5,7 @@ package buscaminasjunio;
  * @author edwar
  */
 public class Movimiento {
-    private String nombreJugador;
+    private final String nombreJugador;
     private int coordenadaX, coordenadaY;
 
     public Movimiento(String nombre, int X, int Y){  

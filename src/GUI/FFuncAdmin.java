@@ -148,6 +148,7 @@ public class FFuncAdmin extends javax.swing.JFrame {
         ventanaAlta.setLocationRelativeTo(null);
         ventanaAlta.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         ventanaAlta.addWindowListener(new WindowAdapter() {
+            @Override
             public void windowClosed(WindowEvent e) {
                 if (data.existeUsuario(data.getJugadorAux().getUsuario())) {  //Si el usuario introducido ya existe.
                     mensaje.setText("El usuario ya existe en el sistema");

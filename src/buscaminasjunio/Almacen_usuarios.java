@@ -12,10 +12,6 @@ public class Almacen_usuarios implements Serializable {
 
     private static ArrayList<Usuario> usuariosTotal = new ArrayList<Usuario>();
 
-    public ArrayList<Usuario> getUsuariosTotal() {  //Devuelve una lista de usuarios.
-        return this.usuariosTotal;
-    }
-    
     public void cargarListado(File f) {  // Carga el archivo con la lista de usuarios y los añade a la lista.
         try (FileInputStream fis = new FileInputStream(f)) {
 
@@ -75,15 +71,15 @@ public class Almacen_usuarios implements Serializable {
     }
 
     public void alta(Jugador j) {
-        this.usuariosTotal.add(j);
+        boolean add = Almacen_usuarios.usuariosTotal.add(j);
     }
 
     public void baja(Jugador j) {
-        this.usuariosTotal.remove(j);
+        Almacen_usuarios.usuariosTotal.remove(j);
     }
     
     public boolean autenticar(Usuario u) {
-        return this.usuariosTotal.contains(u);
+        return Almacen_usuarios.usuariosTotal.contains(u);
     }
 
     public ArrayList<Jugador> clasificacion_por_victorias() {  // Ordena a los jugadores por su número de victorias
@@ -122,5 +118,9 @@ public class Almacen_usuarios implements Serializable {
             }
         });
         return players;
+    }
+    
+    public ArrayList<Usuario> getUsuariosTotal() {  //Devuelve una lista de usuarios.
+        return Almacen_usuarios.usuariosTotal;
     }
 }

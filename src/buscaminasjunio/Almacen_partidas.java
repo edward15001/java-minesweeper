@@ -62,15 +62,15 @@ public class Almacen_partidas implements Serializable {
         try (FileOutputStream fos = new FileOutputStream(f)) {
 
             try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-                for (Partida p : this.getPartidasTotal()) {
-                    oos.writeObject(p);
+                for (Partida p : this.getPartidasTotal()) {  //Recorre todas las partidas almacenadas.
+                    oos.writeObject(p);  //Escribe el usuario en el fichero.
                 }
             } catch (IOException e) {
                 System.out.println("Ha ocurrido un error, no se ha podido escribir el archivo de partidas");
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("Ha ocurrido un error, no se ha encontrado el archivo indicado");
+            System.out.println("Ha ocurrido un error, no se ha encontrado el archivo de partidas");
         } catch (IOException e) {
             System.out.println("Ha ocurrido un error en la entrada/salida" + e.getMessage());
         }
