@@ -5,7 +5,6 @@ import buscaminasjunio.Jugador;
 import buscaminasjunio.Usuario;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import javax.swing.JOptionPane;
 import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 
 /**
@@ -16,6 +15,9 @@ public class FFuncUser extends javax.swing.JFrame {
     
     private Clase_Entre_Ventanas datos = new Clase_Entre_Ventanas();
     private static FMenuInicial menu = new FMenuInicial();
+    private static FJugador2 vJ2 = new FJugador2();
+    private static FStats ventanaPerfil = new FStats();
+    private static FRanking clasificacion = new FRanking();
     
     public FFuncUser() {
         initComponents();
@@ -136,11 +138,10 @@ public class FFuncUser extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void newGameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newGameActionPerformed
-        FJugador2 ventanaOtroJugador = new FJugador2();
-        ventanaOtroJugador.setVisible(true);
-        ventanaOtroJugador.setLocationRelativeTo(null);
-        ventanaOtroJugador.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        ventanaOtroJugador.addWindowListener(new WindowAdapter() {
+        vJ2.setVisible(true);
+        vJ2.setLocationRelativeTo(null);
+        vJ2.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        vJ2.addWindowListener(new WindowAdapter() {
             public void windowClosed(WindowEvent e) {
                 empezarPartida();
             }
@@ -148,13 +149,11 @@ public class FFuncUser extends javax.swing.JFrame {
         this.dispose();    }//GEN-LAST:event_newGameActionPerformed
 
     private void rankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rankingActionPerformed
-        FRanking clasificacion = new FRanking();
         clasificacion.setVisible(true);
         clasificacion.setLocationRelativeTo(null);
         clasificacion.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_rankingActionPerformed
 
     private void perfilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_perfilActionPerformed
-        FStats ventanaPerfil = new FStats();
         ventanaPerfil.setVisible(true);
         ventanaPerfil.setLocationRelativeTo(null);
         ventanaPerfil.setDefaultCloseOperation(DISPOSE_ON_CLOSE);    }//GEN-LAST:event_perfilActionPerformed
@@ -169,40 +168,6 @@ public class FFuncUser extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FFuncUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FFuncUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FFuncUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FFuncUser.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FFuncUser().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel fondo;

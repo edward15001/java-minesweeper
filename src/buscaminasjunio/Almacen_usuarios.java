@@ -11,7 +11,7 @@ import java.util.Comparator;
 public class Almacen_usuarios implements Serializable {
 
     private static ArrayList<Usuario> usuariosTotal = new ArrayList<Usuario>();
-
+   
     public void cargarListado(File f) {  // Carga el archivo con la lista de usuarios y los añade a la lista.
         try (FileInputStream fis = new FileInputStream(f)) {
 

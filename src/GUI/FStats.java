@@ -142,56 +142,13 @@ public class FStats extends javax.swing.JFrame {
     private void marcadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_marcadorActionPerformed
         Partida p = (Partida) desplegable.getSelectedItem();
         Marcador marcador = p.getResult();
-        mensaje.setText("El marcador quedo:\n" + marcador.getMinasJ1() + " minas para " + p.getJugador_actual().getUsuario() + "\n" + "y " + marcador.getMinasJ2() + " minas para " + p.getJugador_esperando().getUsuario() + "\n");
+        mensaje.setText("El marcador quedo:\n" + marcador.getMinasJ1() + " minas para " + p.getJugador_esperando().getUsuario() + "\n" + "y " + marcador.getMinasJ2() + " minas para " + p.getJugador_actual().getUsuario() + "\n");
     }//GEN-LAST:event_marcadorActionPerformed
 
     private void tabMovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tabMovActionPerformed
         Partida p = (Partida) desplegable.getSelectedItem();
-        mensaje.setText(p.imprimirTablero() + "\n" + p.printMovimientos() + "\n" + "Tambien te lo he dejado en un fichero dentro de la carpeta del proyecto.\n");  //Imprime el tablero en le ventana.
+        mensaje.setText(p.imprimirTablero() + "\n" + p.printMovimientos() + "\n");  //Imprime el tablero en le ventana.
         p.getAlmacen().tablero_y_movimientos(p, data.getFicheroTableroMovimientos());    }//GEN-LAST:event_tabMovActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FStats.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FStats().setVisible(true);
-            }
-        });
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<Partida> desplegable;
     private javax.swing.JLabel fondo;

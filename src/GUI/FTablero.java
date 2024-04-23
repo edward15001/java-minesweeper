@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.border.Border;
-import javax.swing.plaf.synth.ColorType;
 
 /**
  *
@@ -192,7 +191,7 @@ public class FTablero extends javax.swing.JFrame {
         nombreP2.setText(":");
         nombreP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         nombreP2.setOpaque(true);
-        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 130, -1, -1));
+        jPanel1.add(nombreP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 130, -1, -1));
 
         puntoP1.setBackground(new java.awt.Color(23, 90, 41));
         puntoP1.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -208,7 +207,7 @@ public class FTablero extends javax.swing.JFrame {
         puntoP2.setText(".");
         puntoP2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         puntoP2.setOpaque(true);
-        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 160, -1, -1));
+        jPanel1.add(puntoP2, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 160, -1, -1));
 
         turno.setBackground(new java.awt.Color(23, 90, 41));
         turno.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -216,7 +215,7 @@ public class FTablero extends javax.swing.JFrame {
         turno.setText(":");
         turno.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         turno.setOpaque(true);
-        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 20, -1, -1));
+        jPanel1.add(turno, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, -1, -1));
 
         texto.setBackground(new java.awt.Color(23, 90, 41));
         texto.setFont(new java.awt.Font("DialogInput", 1, 18)); // NOI18N
@@ -224,7 +223,7 @@ public class FTablero extends javax.swing.JFrame {
         texto.setText("TURNO DE");
         texto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         texto.setOpaque(true);
-        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
+        jPanel1.add(texto, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         volver.setBackground(new java.awt.Color(111, 204, 102));
         volver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/icons.return/icons8-volver-48.png"))); // NOI18N
@@ -248,42 +247,6 @@ public class FTablero extends javax.swing.JFrame {
         user.setLocationRelativeTo(null);
         user.setDefaultCloseOperation(EXIT_ON_CLOSE);
         dispose();    }//GEN-LAST:event_volverActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FTablero().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Player1;

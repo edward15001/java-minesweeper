@@ -25,14 +25,6 @@ public class FMenuInicial extends javax.swing.JFrame {
         data.getUsers().guardarListado(data.getFicheroUsuarios());
         data.getAlmacenPartidas().guardarFichero(data.getFicheroPartidas()); // Guarda lista de partidas
     }
-    
-    public void ImageScale(){
-        ImageIcon icon = new ImageIcon("/IMG/fondoBatalla.jpg");
-        Image img = icon.getImage();
-        Image imgScale = img.getScaledInstance(fondo.getWidth(), fondo.getHeight(), Image.SCALE_FAST);
-        ImageIcon scaledImg = new ImageIcon(imgScale);
-        fondo.setIcon(scaledImg);
-    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -110,41 +102,6 @@ public class FMenuInicial extends javax.swing.JFrame {
         login.setDefaultCloseOperation(EXIT_ON_CLOSE);
         dispose();
     }//GEN-LAST:event_userActionPerformed
-
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FMenuInicial.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                FMenuInicial menu = new FMenuInicial();
-                menu.setVisible(true);
-                menu.setLocationRelativeTo(null);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boss;
