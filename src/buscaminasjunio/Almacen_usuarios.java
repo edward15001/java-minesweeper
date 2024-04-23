@@ -53,20 +53,33 @@ public class Almacen_usuarios implements Serializable {
     }
 
     public void guardarListado(File f) {  // Guarda los usuarios en un fichero.
-        try (FileOutputStream fos = new FileOutputStream(f)) {
-            try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
-                oos.writeInt(this.getUsuariosTotal().size());  // Número de usuarios
-                for (Usuario u : this.getUsuariosTotal()) {
-                    oos.writeObject(u);
-                }
-            } catch (IOException e) {
-                System.out.println("Ha ocurrido un error, no se ha podido escribir el archivo de usuarios");
-            }
+//        try (FileOutputStream fos = new FileOutputStream(f)) {
+//            try (ObjectOutputStream oos = new ObjectOutputStream(fos)) {
+//                oos.writeInt(this.getUsuariosTotal().size());  // Número de usuarios
+//                for (Usuario u : this.getUsuariosTotal()) {
+//                    oos.writeObject(u);
+//                }
+//            } catch (IOException e) {
+//                System.out.println("Ha ocurrido un error, no se ha podido escribir el archivo de usuarios");
+//            }
+//
+//        } catch (FileNotFoundException e) {
+//            System.out.println("Ha ocurrido un error, no se ha encontrado el archivo indicado");
+//        } catch (IOException e) {
+//            System.out.println("Ha ocurrido un error en la entrada/salida" + e.getMessage());
+//        }
 
-        } catch (FileNotFoundException e) {
-            System.out.println("Ha ocurrido un error, no se ha encontrado el archivo indicado");
-        } catch (IOException e) {
-            System.out.println("Ha ocurrido un error en la entrada/salida" + e.getMessage());
+        for(Usuario user : usuariosTotal){
+                try {
+                    FileWriter archivo = new FileWriter(f);
+                    PrintWriter pw = new PrintWriter(archivo);
+                    pw.println("Jugadores: ");
+                    pw.println(user.getNombre() + "#" + user.getContrasenia());
+                    
+                    pw.close();
+
+                } catch (IOException e) {
+                }
         }
     }
 
