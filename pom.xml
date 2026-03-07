@@ -92,7 +92,7 @@
                             </classPath>
                             <jre>
                                 <path>%JAVA_HOME%</path>
-                                <minVersion>1.8.0</minVersion>
+                                <minVersion>17</minVersion>
                                 <opts>
                                     <opt>-Djava.awt.headless=false</opt>
                                 </opts>

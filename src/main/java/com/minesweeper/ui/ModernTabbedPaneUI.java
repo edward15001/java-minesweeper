@@ -16,7 +16,7 @@ public class ModernTabbedPaneUI extends BasicTabbedPaneUI {
 
     @Override
     protected void paintTabArea(Graphics g, int tabPlacement, int selectedIndex) {
-        // Paint the background of the tab area with the main app background color
+        // Paint the background of the tab area to match the app background
         g.setColor(Theme.BG_COLOR);
         g.fillRect(0, 0, tabPane.getWidth(), tabPane.getHeight());
         super.paintTabArea(g, tabPlacement, selectedIndex);
@@ -28,15 +28,18 @@ public class ModernTabbedPaneUI extends BasicTabbedPaneUI {
         Graphics2D g2 = (Graphics2D) g.create();
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-        if (isSelected) {
-            g2.setColor(Theme.PANEL_BG);
-        } else {
-            g2.setColor(new Color(28, 35, 60)); // Slightly lighter than pure background for unselected tabs
-        }
+        // Calculate a perfect capsule shape
+        int arc = h - 8;
 
-        // Draw the tab shape with rounded top corners
-        int arc = 20;
-        g2.fillRoundRect(x, y + 5, w, h + arc, arc, arc);
+        if (isSelected) {
+            // Selected tabs use the vibrant accent color
+            g2.setColor(Theme.ACCENT_COLOR);
+            g2.fillRoundRect(x + 2, y + 4, w - 4, h - 6, arc, arc);
+        } else {
+            // Inactive tabs use the panel background color and are slightly smaller/lower
+            g2.setColor(Theme.PANEL_BG);
+            g2.fillRoundRect(x + 2, y + 6, w - 4, h - 8, arc, arc);
+        }
 
         g2.dispose();
     }
@@ -44,66 +47,78 @@ public class ModernTabbedPaneUI extends BasicTabbedPaneUI {
     @Override
     protected void paintTabBorder(Graphics g, int tabPlacement, int tabIndex, int x, int y, int w, int h,
             boolean isSelected) {
-        // We handle the shape in paintTabBackground, so no default border
+        // We handle the shape entirely in paintTabBackground
     }
 
     @Override
     protected void paintFocusIndicator(Graphics g, int tabPlacement, Rectangle[] rects, int tabIndex,
             Rectangle iconRect, Rectangle textRect, boolean isSelected) {
-        // Remove the dotted focus outline around text
+        // Remove the dotted focus outline around text for a cleaner look
     }
 
     @Override
     protected void paintContentBorder(Graphics g, int tabPlacement, int selectedIndex) {
-        // Remove the default 3D border around the tab's content panel
+        Graphics2D g2 = (Graphics2D) g.create();
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
         int width = tabPane.getWidth();
         int height = tabPane.getHeight();
         Insets insets = tabPane.getInsets();
 
-        int x = insets.left;
-        int y = insets.top;
-        int w = width - insets.right - insets.left;
-        int h = height - insets.top - insets.bottom;
+        int y = insets.top + calculateTabAreaHeight(tabPlacement, runCount, maxTabHeight);
 
-        y += calculateTabAreaHeight(tabPlacement, runCount, maxTabHeight);
-        h -= (y - insets.top);
+        // Draw a clean subtle line/box for the content panel below the tabs
+        g2.setColor(Theme.PANEL_BG);
+        g2.drawRoundRect(insets.left, y, width - insets.right - insets.left - 1, height - y - insets.bottom - 1, 10,
+                10);
 
-        // Fill background of the content border area to avoid flashing gray/white
-        g.setColor(Theme.PANEL_BG);
-        g.fillRect(x, y, w, h);
+        g2.dispose();
     }
 
     @Override
     protected void paintText(Graphics g, int tabPlacement, Font font, FontMetrics metrics, int tabIndex, String title,
             Rectangle textRect, boolean isSelected) {
         Graphics2D g2 = (Graphics2D) g.create();
+        // Enable high quality text rendering
         g2.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
         g2.setFont(Theme.BOLD_FONT);
 
         if (isSelected) {
-            g2.setColor(Theme.FG_COLOR);
+            g2.setColor(Color.WHITE); // High contrast for accent background
         } else {
-            g2.setColor(new Color(150, 160, 200)); // Distinct inactive text color
+            g2.setColor(new Color(160, 170, 210)); // Soft grayish blue for readability
         }
 
-        int textX = textRect.x;
-        int textY = textRect.y + metrics.getAscent() + 5; // offset slightly for new bounds
+        FontMetrics fm = g2.getFontMetrics();
+        // Dynamically measure true center for the string
+        int textX = textRect.x + (textRect.width - fm.stringWidth(title)) / 2;
+        int textY = textRect.y + (textRect.height - fm.getHeight()) / 2 + fm.getAscent();
+
+        // Adjust text height slightly to match the pill's visual center
+        if (isSelected) {
+            textY -= 1;
+        } else {
+            textY += 1;
+        }
+
         g2.drawString(title, textX, textY);
         g2.dispose();
     }
 
     @Override
     protected int calculateTabWidth(int tabPlacement, int tabIndex, FontMetrics metrics) {
-        return super.calculateTabWidth(tabPlacement, tabIndex, metrics) + 24;
+        // Give tabs much more horizontal breathing room
+        return super.calculateTabWidth(tabPlacement, tabIndex, metrics) + 40;
     }
 
     @Override
     protected int calculateTabHeight(int tabPlacement, int tabIndex, int fontHeight) {
-        return super.calculateTabHeight(tabPlacement, tabIndex, fontHeight) + 12;
+        // Give tabs more vertical height for the capsule shape
+        return super.calculateTabHeight(tabPlacement, tabIndex, fontHeight) + 16;
     }
 
     @Override
     protected Insets getTabInsets(int tabPlacement, int tabIndex) {
-        return new Insets(5, 15, 5, 15);
+        return new Insets(6, 20, 6, 20);
     }
 }
