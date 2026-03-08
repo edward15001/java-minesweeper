@@ -381,7 +381,7 @@ public class GamePanel extends JPanel {
             totalMinesFound++;
 
             // "F>" as flag design seen in mockup
-            buttons[r][c].setText("F");
+            buttons[r][c].setText("⚑");
             buttons[r][c].setBackground(CYBER_CELL_REVEALED); // Dark cell
             buttons[r][c].setForeground(CYBER_NEON);
             buttons[r][c].setBorder(new LineBorder(CYBER_NEON, 1)); // Bright border when flagged
