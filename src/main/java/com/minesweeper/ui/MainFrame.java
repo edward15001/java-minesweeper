@@ -11,7 +11,8 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         setTitle("Buscaminas Competitivo");
-        setSize(800, 600);
+        setSize(1050, 750);
+        setMinimumSize(new Dimension(980, 700)); // Prevent compressing the UI
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Center on screen
 
